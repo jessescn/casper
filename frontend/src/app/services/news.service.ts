@@ -8,7 +8,7 @@ export class NewsService {
 
   news = [];
   // baseUrl = 'http://localhost:3800'
-  private baseUrl = "https://casperbotapii.herokuapp.com/";
+  private baseUrl = "https://casperbotapii.herokuapp.com";
 
   constructor(private http: HttpClient) { }
 

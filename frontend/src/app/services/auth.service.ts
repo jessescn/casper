@@ -9,7 +9,7 @@ export class AuthService {
 
   private tokenKey = "app_token";
   // private baseUrl = 'http://localhost:3800';
-  private baseUrl = "https://casperbotapii.herokuapp.com/";
+  private baseUrl = "https://casperbotapii.herokuapp.com";
 
   constructor(private http: HttpClient,
                           private router: Router, ) { }
@@ -34,6 +34,7 @@ export class AuthService {
 
   private handleLogin(credentials) {
     this.http.post(`${this.baseUrl}/login`, credentials).subscribe((resp) => { 
+      
         this.store(resp);
        this.router.navigateByUrl('/home');
        

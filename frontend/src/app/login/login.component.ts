@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  login(){
+  login(){    
     this.authService.login(this.credentials);
     this.invalidPin = !this.authService.checkCredentials();
   }
