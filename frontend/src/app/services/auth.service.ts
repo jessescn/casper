@@ -12,40 +12,40 @@ export class AuthService {
   private baseUrl = "https://casperbotapii.herokuapp.com";
 
   constructor(private http: HttpClient,
-                          private router: Router, ) { }
+    private router: Router, ) { }
 
   private store(token) {
     localStorage.setItem(this.tokenKey, JSON.stringify(token));
   }
 
-  private clear(){
+  private clear() {
     localStorage.removeItem(this.tokenKey);
     this.router.navigateByUrl('/login');
   }
 
-  private check(){
+  private check() {
     return localStorage.getItem(this.tokenKey);
   }
 
-  checkCredentials(){
-    const token  = this.check();
+  checkCredentials() {
+    const token = this.check();
     return token != null;
-  } 
+  }
 
   private handleLogin(credentials) {
-    this.http.post(`${this.baseUrl}/login`, credentials).subscribe((resp) => { 
-      
-        this.store(resp);
-       this.router.navigateByUrl('/home');
-       
-      },(error) => {});
+    this.http.post(`${this.baseUrl}/login`, credentials).subscribe((resp) => {
+
+      this.store(resp);
+      this.router.navigateByUrl('/home');
+
+    }, (error) => { });
   }
 
   login(credentials) {
     return this.handleLogin(credentials);
   }
 
-  logout(){
+  logout() {
     this.clear();
   }
 }
