@@ -1,6 +1,8 @@
 const express = require('express');
+
 const AdminController = require('../controllers/UserController');
 const NewsController = require('../controllers/NewsController');
+const WebhookController = require('../controllers/WebhookController');
 
 const routes = express.Router();
 
@@ -13,5 +15,8 @@ routes.get('/news/:topic', NewsController.getNewByTopic);
 routes.post('/news', NewsController.post);
 routes.post('/news/:id', NewsController.update);
 routes.delete('/news/:id', NewsController.delete);
+
+routes.post('/webhook', WebhookController.receive);
+routes.get('/webhook', WebhookController.handleWebhook);
 
 module.exports = routes;
