@@ -1,0 +1,97 @@
+#login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100vh;
+    background-color:#666;
+}
+
+#login h1{
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 20px;
+    color: #fff;
+    font-size: 40px;
+}
+
+
+#login-form{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 300px; 
+    height: 400px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.3);
+    border-radius: 10px;
+    background-color:#fff;
+    color: #666;
+}
+
+
+form h2{
+    margin: 30px 0;
+}   
+ 
+form i{
+   color: #43ddc1;
+    font-size: 100px;
+}
+
+#input-field{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0 10px 0;
+}
+
+#input-field label{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#input-field input[type="password"]{
+    height: 40px;
+    width: 240px;
+    border: none;
+    text-align: center;
+    border: 2px solid #43ddc1;
+    margin: 10px 0;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+#input-field input[type="password"]:focus{
+    width: 280px;
+    color: #333;
+}
+
+#input-field input[type="password"]:focus::placeholder{
+    opacity: 0;
+}
+
+form button{
+    height: 40px;
+    width: 150px;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    font-weight: bold;
+    background-color: #43ddc1 ;
+    transition: 0.2s ease;
+}
+
+form button:hover{
+    transform: scale(1.05);
+    background-color: #fff;
+    border: 2px solid #43ddc1;
+    color: #43ddc1;
+}
+
+#invalid-credentials{
+    font-size: 10px;
+    color: red;
+}
+
+

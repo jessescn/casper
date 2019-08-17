@@ -1,0 +1,22 @@
+<div id="panel">
+  <div id="search">
+    <input id="search-btn" placeholder="Digite o título da noticia" (keyup)="filterBy($event)">
+    <button (click)="filterBy($event)"><i class="fas fa-search"></i>Pesquisar</button>
+  </div>
+  <div id="panel-labels">
+      <div class="row">
+          <span *ngFor="let label of labels">{{ label }}</span>
+      </div>
+  </div>
+  <div id="panel-rows" *ngFor="let notice of displayNews">
+    <app-row-panel (modalOpener)="openEditModal($event)" (removeRow)="handleRemoveRow($event)" [new]="notice"></app-row-panel>
+  </div>
+  <div id="pages">
+    <span>{{ displayNews.length }} de {{ filteredNews.length }} notícias disponivel(s)</span>
+    <button (click)="showMore()">Mostrar mais</button>
+    <button (click)="showLess()">Ocultar</button>
+  </div>
+  <app-modal (modalClose)="closeModal($event)" [openModal]="isModalOpen" [modalTitle]="modalTitle" [new]="modalNew">
+  </app-modal>
+  <button id="add-btn" (click)="openCreateModal()" title="Nova notícia">+</button>
+</div>

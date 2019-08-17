@@ -1,0 +1,17 @@
+<div id="login">
+  <h1>Casper ChatBot</h1>
+  <div id="login-form">
+      <form #form="ngForm" (ngSubmit)="login()">
+        <h2>Painel do Administrador</h2>
+        <i class="fas fa-users-cog"></i>
+        <div id="input-field">
+          <label>Admin</label>
+          <input type="password" name="password" placeholder="Insira o PIN de administrador" [(ngModel)]="credentials.password">
+          <div id="invalid-credentials" *ngIf="invalidPin">
+            <p>PIN inválido! tente novamente.</p>
+          </div>
+        </div>
+          <button type="submit">Acessar</button>
+      </form>
+    </div>
+</div>

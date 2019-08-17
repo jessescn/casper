@@ -1,0 +1,8 @@
+<div class="row">
+  <div>{{ notice.topic }}</div>
+  <div>{{ formatText(notice.title) }}</div>
+  <div>{{ formatText(notice.description) }}</div>
+  <div><a href="{{ notice.image }}"><i class="fas fa-external-link-alt"></i></a></div>
+  <div><a href="{{ notice.link }}"><i class="fas fa-link"></i></a></div>
+  <div><i class="fas fa-edit" (click)="open()"></i><i class="far fa-trash-alt" (click)="remove()"></i></div>
+</div>

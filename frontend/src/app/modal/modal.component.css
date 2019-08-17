@@ -1,0 +1,98 @@
+#screen{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.6);
+}
+
+#modal{
+    position: fixed;
+    height: 500px;
+    width: 500px;
+    background-color: #fff; 
+    top: calc(50% - 500px/2);
+    left: calc(50% - 500px/2);
+    border-radius: 5px;
+}
+
+#modal form{
+    padding: 30px;
+    font-size: 14px;
+}
+
+#modal form h2{
+    font-size: 26px;
+}
+
+#modal form input[type="text"]{
+    width: 100%;
+    height: 30px;
+    border: none;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 4px #DADADA;
+    font-size: 12px;
+}
+
+#modal form textarea{
+    width: 100%;
+    height: 100px;
+}
+
+#modal form textarea, input {
+    padding: 0 0 0 5px;
+    margin: 5px 0;
+}
+
+#modal form div{
+    margin: 10px 0; 
+}
+
+#formFooter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#topic, #buttons{
+    width: 50%;
+} 
+
+#topic span{
+    margin: 0 10px; 
+}
+
+#buttons  button{ 
+    width: 100px;
+    height: 35px;
+    margin: 0 5px;
+    border: none;
+    box-shadow: 1px 1px 4px #DADADA;
+    background-color: #fff;
+    transition: 0.2s ease;
+}
+
+#buttons  button:hover{
+    transform: scale(1.1);
+    box-shadow: 1px 1px 8px #bbb;
+}
+
+#buttons  button[type="submit"]{
+    background-color: #43ddc1;
+    color: white;
+}
+
+
+#formFooter div select{
+    width: 100px;
+    height: 35px;
+    border: none;
+    box-shadow: 1px 1px 4px #bbb;
+    background-color: #fff;
+}
+
+#description p{
+    font-size: 10px;
+}
+

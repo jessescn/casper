@@ -1,0 +1,27 @@
+#app h2, h3{
+    cursor: pointer;
+    padding: 20px 30px;
+}
+
+#app h2 i {
+    margin: 0 10px;
+}
+
+#panel{
+    margin: 10px 0;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+}
+
+#comp{
+    grid-column-start: 2;
+    grid-column-end: 10;
+}
+
+#app header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #43ddc1;
+    color: white;
+}
