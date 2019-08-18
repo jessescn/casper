@@ -3,7 +3,11 @@
     padding: 20px 30px;
 }
 
-#app h2 i {
+ h3:hover{
+    transform: scale(1.1)
+}
+
+#app h2 i, h3 i {
     margin: 0 10px;
 }
 

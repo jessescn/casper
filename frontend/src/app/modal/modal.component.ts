@@ -16,7 +16,7 @@ export class ModalComponent implements OnInit {
                       "title": "",
                       "image": "",
                       "link" : "",
-                      "description": ""} 
+                      "description": "" } 
 
   constructor() {
   }
@@ -32,10 +32,15 @@ export class ModalComponent implements OnInit {
     event.stopPropagation();
   }
 
-  save(){ 
-    console.log(this.values);
+  save(){     
+
+      this.new.topic = this.values.topic || this.new.topic;
+      this.new.title = this.values.title || this.new.title;
+      this.new.image = this.values.image || this.new.image;
+      this.new.link = this.values.link || this.new.link;
+      this.new.description = this.values.description || this.new.description;
     
-    this.modalClose.emit(this.values);
+    this.modalClose.emit(this.new);
   }
 
 }
