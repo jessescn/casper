@@ -23,7 +23,7 @@ export class RowPanelComponent implements OnInit {
   }
 
   handleRemoveNew(){
-    this.confirmation = false;
+    this.closeConfirmation();
     this.removeRow.emit(this.notice);
   }
 

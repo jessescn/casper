@@ -1,6 +1,4 @@
 const validUrl = require('valid-url');
-
-const responseHandler = require('./response');
 const templates = require('./template');
 const send = require('./send');
 const NewsController = require('../controllers/NewsController');

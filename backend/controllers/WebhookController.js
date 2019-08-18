@@ -1,13 +1,12 @@
-const send = require('../services/send');
 const responseHandler = require('../services/response');
 const postbackHandler = require('../services/postbacks');
+require('dotenv-safe').config();
 
 module.exports = {
   receive(req, res) {
 
     let body = req.body;
 
-    // Check the webhook event is from a Page subscription
     if (body.object === 'page') {
 
       body.entry.forEach(function (entry) {
@@ -18,12 +17,10 @@ module.exports = {
 
         if(webhook_event.message){
           if (webhook_event.message.quick_reply) {
-             //console.log(`lidando com o postback ${webhook_event.message.text}`);
             
              handlePostback(sender_psid, webhook_event.message.quick_reply);
   
           } else if (webhook_event.message) {
-            // console.log(`lidando com a mensagem ${webhook_event.message.text}`);
             handleMessage(sender_psid, webhook_event.message);
           }
         }
@@ -39,7 +36,7 @@ module.exports = {
 
   handleWebhook(req, res) {
 
-    const VERIFY_TOKEN = "fstwfcydwvda";
+    const VERIFY_TOKEN = process.env.SECRET;
 
     let mode = req.query['hub.mode'];
     let token = req.query['hub.verify_token'];
