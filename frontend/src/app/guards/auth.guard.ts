@@ -17,6 +17,8 @@ export class AuthGuard implements CanActivate {
   ) : Observable<boolean> | boolean {
     
     if(!this.authService.checkCredentials()){
+      console.log('opa');
+      
       this.router.navigateByUrl('/login');
       return false;
     }
