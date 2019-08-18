@@ -11,16 +11,13 @@ module.exports = {
         return res.json(news);
     },
     // retorna a lista de todas as noticias pelo topico recebido como parametro
-    async getNewByTopic(req, res) {
-        const { topic } = req.params;
+    async getNewByTopic(topic) {
 
         if (!topic) {
-            return res.status(400).send("Requisição sem tema");
+            return [];
         }
 
-        const news = await New.find({ topic: topic });
-
-        return res.json(news);
+        return await New.find({ topic: topic }).limit(10);;
     },
     // recebe os valores pelo corpo e cria a nova noticia
     async post(req, res) {

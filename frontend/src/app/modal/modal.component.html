@@ -1,28 +1,28 @@
 <div *ngIf="openModal" id="screen">
   <div id="modal" (click)="handleClick($event)" class="animated bounceInUp">
-    <form #form="ngForm" (ngSubmit)="save()">
+    <form>
       <h2>{{ modalTitle }}</h2>
       <div>
-        <label>Título*</label>
-        <input type="text" value="{{ new.title }}" name="title" [(ngModel)]="new.title"  required pattern="^(?=.*[a-zA-Z].*)([a-zA-Z0-9]+)$" title="campo obrigatorio">
+        <label>Título</label>
+        <input type="text" [value]="new.title" name="title"  (input)= "values.title = $event.target.value"  required pattern="^(?=.*[a-zA-Z].*)([a-zA-Z0-9]+)$" title="campo obrigatorio">
       </div>
       <div>
           <label>Imagem*</label>
-          <input type="text" value="{{ new.image }}" name="image" [(ngModel)]="new.image" required pattern="\S(.*\S)?">
+          <input type="text" [value]="new.image" name="image"   (input)= "values.image = $event.target.value" required pattern="\S(.*\S)?">
         </div>
         <div>
           <label>Link*</label>
-          <input  type="text" value="{{ new.link }}" name="link" [(ngModel)]="new.link" required pattern="\S(.*\S)?">
+          <input  type="text" [value]="new.link" name="link"   (input)= "values.link = $event.target.value" required pattern="\S(.*\S)?">
         </div>
         <div id="description">
-            <label>Descrição*</label>
-            <textarea type="text"  value="{{ new.description }}" name="description" [(ngModel)]="new.description" required pattern="\S(.*\S)?"></textarea>
-            <p>*Obrigatório</p>
+            <label>Descrição</label>
+            <textarea type="text"  [value]="new.description" name="description" (input)= "values.description = $event.target.value" required pattern="\S(.*\S)?"></textarea>
+            <p>* A noticia pode não possuir a visualização desejada caso os valores sejam inválidos</p>
         </div>
         <div id="formFooter">
           <div id="topic"> 
-              <span>Tema*: </span>
-              <select value="{{ new.topic }}" name="topic" [(ngModel)]="new.topic" required>
+              <span>Tema: </span>
+              <select [value]="new.topic" name="topic" (input)= "values.topic = $event.target.value" required>
                 <option value="esportes">Esportes</option>
                 <option value="politica">Política</option>
                 <option value="entretenimento">Entretenimento</option>
@@ -31,7 +31,7 @@
             </div>
             <div id="buttons">
               <button (click)="closeModal()">Sair</button>
-              <button type="submit" [disabled]="form.invalid">Salvar</button>
+              <button type="submit" (click)= "save()">Salvar</button>
             </div>
         </div>
     </form>

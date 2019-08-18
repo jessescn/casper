@@ -8,7 +8,6 @@ import { Router } from '@angular/router';
 export class AuthService {
 
   private tokenKey = "app_token";
-  // private baseUrl = 'http://localhost:3800';
   private baseUrl = "https://casperbotapii.herokuapp.com";
 
   constructor(private http: HttpClient,
@@ -41,7 +40,7 @@ export class AuthService {
     }, (error) => { });
   }
 
-  login(credentials) {
+   login(credentials) {
     return this.handleLogin(credentials);
   }
 

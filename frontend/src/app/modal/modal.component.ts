@@ -12,6 +12,11 @@ export class ModalComponent implements OnInit {
   @Input('modalTitle') modalTitle;
   @Output() modalClose = new EventEmitter();
 
+  values = { "topic":"",
+                      "title": "",
+                      "image": "",
+                      "link" : "",
+                      "description": ""} 
 
   constructor() {
   }
@@ -19,7 +24,7 @@ export class ModalComponent implements OnInit {
   ngOnInit() {
   }
   
-  closeModal(){ 
+  closeModal(){     
     this.modalClose.emit(null);
   }
 
@@ -27,8 +32,10 @@ export class ModalComponent implements OnInit {
     event.stopPropagation();
   }
 
-  save(){         
-    this.modalClose.emit(this.new);
+  save(){ 
+    console.log(this.values);
+    
+    this.modalClose.emit(this.values);
   }
 
 }

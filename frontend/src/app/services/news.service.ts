@@ -7,17 +7,12 @@ import { HttpClient } from '@angular/common/http';
 export class NewsService {
 
   news = [];
-  // baseUrl = 'http://localhost:3800'
   private baseUrl = "https://casperbotapii.herokuapp.com";
 
   constructor(private http: HttpClient) { }
 
   listNews(){
     return this.http.get(`${this.baseUrl}/news`); 
-  }
-
-  listMocado(){
-    return this.news;
   }
 
   saveNew(news){

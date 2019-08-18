@@ -1,3 +1,7 @@
+.container{
+    display: flex;
+}
+
 .row{
     width: 100%;
     height: 30px;
@@ -31,4 +35,56 @@
     font-size: 14px;
     margin: 0 8px;
 }
+
+#confirmModal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#modal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    width: 400px;
+    height: 250px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 8px #666;
+    color: #333;
+}
+
+#modal h1{
+    margin-bottom: 30px;
+}
+
+#modal p {
+    margin: 20px 0;
+}
+
+#modal div  button{
+    width: 120px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none; 
+    border: 2px solid #43ddc1;
+    border-radius: 5px;
+    background-color: #fff;
+    margin: 0 20px;
+    transition: 0.2s ease;
+}
+
+#modal div  button:hover{
+    transform: scale(1.1);
+    color: white;
+    background-color: #43ddc1;
+}
+
 

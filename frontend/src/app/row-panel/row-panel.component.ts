@@ -11,17 +11,28 @@ export class RowPanelComponent implements OnInit {
   @Output() modalOpener = new EventEmitter();
   @Output() removeRow = new EventEmitter();
 
+  confirmation = false;
+
   constructor() { }
 
   ngOnInit() {
   }
 
-  open(){
+  openModal(){
     this.modalOpener.emit(this.notice);
   }
 
-  remove(){
+  handleRemoveNew(){
+    this.confirmation = false;
     this.removeRow.emit(this.notice);
+  }
+
+  closeConfirmation(){
+    this.confirmation = false;
+  }
+
+  removeNew(){
+      this.confirmation  = true;
   }
 
   formatText(text){

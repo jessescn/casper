@@ -2,7 +2,18 @@
   <div>{{ notice.topic }}</div>
   <div>{{ formatText(notice.title) }}</div>
   <div>{{ formatText(notice.description) }}</div>
-  <div><a href="{{ notice.image }}"><i class="fas fa-external-link-alt"></i></a></div>
-  <div><a href="{{ notice.link }}"><i class="fas fa-link"></i></a></div>
-  <div><i class="fas fa-edit" (click)="open()"></i><i class="far fa-trash-alt" (click)="remove()"></i></div>
+  <div><a href="{{ notice.image }}" target="_blank"><i class="fas fa-external-link-alt"></i></a></div>
+  <div><a href="{{ notice.link }}" target="_blank"><i class="fas fa-link"></i></a></div>
+  <div><i class="fas fa-edit" (click)="openModal()"></i><i class="far fa-trash-alt" (click)="removeNew()"></i>
+  </div>
+</div>
+<div *ngIf="confirmation" id="confirmModal"> 
+  <div id="modal" >
+    <h1>Confirmar remoção</h1>
+    <p>Tem certeza que deseja remover a notícia?</p>
+    <div >
+      <button (click)="confirmation = false">Não</button>
+      <button (click)="handleRemoveNew()">Sim</button>
+    </div>
+  </div>
 </div>

@@ -19,6 +19,7 @@ export class PanelComponent implements OnInit {
   isModalOpen;
   modalTitle;
   modalNew;
+  backupState;
 
 
   ngOnInit() {
@@ -33,7 +34,7 @@ export class PanelComponent implements OnInit {
       this.totalNews = resp;
       this.filteredNews = this.totalNews;
       this.setVisibleRows();
-    });
+    })
   }
 
   setVisibleRows() {
