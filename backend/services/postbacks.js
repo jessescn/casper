@@ -47,14 +47,13 @@ async function getNews(topic, id) {
         let filteredNotices = [];
 
         news.forEach(notice => {
-            if (!validUrl.isUri(notice.link) || validUrl.isUri(notice.image)) {
                 if (!validUrl.isUri(notice.link)) {
                     notice.link = defaultUrl
                 }
                 if (!validUrl.isUri(notice.image)) {
                     notice.image = defaultImg
                 }
-            }
+                
             filteredNotices.push(notice)
         })
 

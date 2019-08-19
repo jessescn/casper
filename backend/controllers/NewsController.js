@@ -17,7 +17,7 @@ module.exports = {
             return [];
         }
 
-        return await New.find({ topic: topic }).limit(10);;
+        return await New.find({ topic: topic }).limit(10);
     },
     // recebe os valores pelo corpo e cria a nova noticia
     async post(req, res) {
