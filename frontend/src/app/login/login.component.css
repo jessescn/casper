@@ -1,17 +1,15 @@
 #login{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
     height: 100vh;
-    background-color:#666;
+    background-color:#999;
 }
 
 #login h1{
-    position: fixed;
-    top: 0;
-    left: 0;
-    margin: 20px;
+    margin-bottom: 40px;
     color: #fff;
     font-size: 40px;
 }
