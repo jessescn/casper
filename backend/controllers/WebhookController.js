@@ -57,7 +57,7 @@ module.exports = {
 }
 
 function handleMessage(sender_psid, received_message) {
-  responseHandler.handleMessage(sender_psid);
+  responseHandler.handleMessage(sender_psid, received_message);
 }
 
 function handlePostback(sender_psid, received_postback) {
