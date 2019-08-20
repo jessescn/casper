@@ -8,8 +8,8 @@ export class NewsService {
 
   news = [];
   
-  // private baseUrl = "https://casperbotapii.herokuapp.com";
-  private baseUrl = "http://localhost:3800";
+  private baseUrl = "https://casperbotapii.herokuapp.com";
+  // private baseUrl = "http://localhost:3800";
   
   private headers =  { headers: {
     'authorization': localStorage.getItem('app_token')}

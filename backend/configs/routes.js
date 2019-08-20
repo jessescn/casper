@@ -1,10 +1,10 @@
 const express = require('express');
 
-const AdminController = require('../controllers/UserController');
-const NewsController = require('../controllers/NewsController');
-const WebhookController = require('../controllers/WebhookController');
+const AdminController = require('../app/controllers/UserController');
+const NewsController = require('../app/controllers/NewsController');
+const WebhookController = require('../app/controllers/WebhookController');
 
-const authMiddleware = require('../middlewares/auth');
+const authMiddleware = require('../app/middlewares/auth');
 
 const routes = express.Router();
 
