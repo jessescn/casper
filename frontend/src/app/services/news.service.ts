@@ -7,16 +7,22 @@ import { HttpClient } from '@angular/common/http';
 export class NewsService {
 
   news = [];
-  private baseUrl = "https://casperbotapii.herokuapp.com";
+  
+  // private baseUrl = "https://casperbotapii.herokuapp.com";
+  private baseUrl = "http://localhost:3800";
+  
+  private headers =  { headers: {
+    'authorization': localStorage.getItem('app_token')}
+   }
 
   constructor(private http: HttpClient) { }
 
-  listNews(){
-    return this.http.get(`${this.baseUrl}/news`); 
+  listNews(){    
+    return this.http.get(`${this.baseUrl}/news`, this.headers)
   }
 
   saveNew(news){
-    return this.http.post(`${this.baseUrl}/news`, news);  
+    return this.http.post(`${this.baseUrl}/news`, news, this.headers);
   }
 
    updateNew(news){
@@ -26,11 +32,12 @@ export class NewsService {
           return this.saveNew(news);
        }
        
-       return this.http.post(`${this.baseUrl}/news/${_id}`, news);    
+       return this.http.put(`${this.baseUrl}/news/${_id}`, news, this.headers);    
   }
 
   removeNew(news){
     const { _id } = news;    
-    return this.http.delete<void>(`${this.baseUrl}/news/${_id}`);  
+    return this.http.delete<void>(`${this.baseUrl}/news/${_id}`, this.headers);  
   }
+
 }

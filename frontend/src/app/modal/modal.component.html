@@ -1,28 +1,28 @@
 <div *ngIf="openModal" id="screen">
   <div id="modal" (click)="handleClick($event)" class="animated bounceInUp">
-    <form>
+    <form #myForm="ngForm" (ngSubmit)="save(myForm.form)" > 
       <h2>{{ modalTitle }}</h2>
       <div>
         <label>Título</label>
-        <input type="text" [value]="new.title" name="title"  (input)= "values.title = $event.target.value"  required pattern="^(?=.*[a-zA-Z].*)([a-zA-Z0-9]+)$" title="campo obrigatorio">
+        <input type="text" [ngModel]="new.title" name="title"  required>
       </div>
       <div>
           <label>Imagem*</label>
-          <input type="text" [value]="new.image" name="image"   (input)= "values.image = $event.target.value" required pattern="\S(.*\S)?">
+          <input type="text" [ngModel]="new.image" name="image"  required>
         </div>
         <div>
           <label>Link*</label>
-          <input  type="text" [value]="new.link" name="link"   (input)= "values.link = $event.target.value" required pattern="\S(.*\S)?">
+          <input  type="text" [ngModel]="new.link" name="link" required>
         </div>
         <div id="description">
             <label>Descrição</label>
-            <textarea type="text"  [value]="new.description" name="description" (input)= "values.description = $event.target.value" required pattern="\S(.*\S)?"></textarea>
+            <textarea type="text"  [ngModel]="new.description" name="description" required ></textarea>
             <p>* A noticia pode não possuir a visualização desejada caso os valores sejam inválidos</p>
         </div>
         <div id="formFooter">
           <div id="topic"> 
               <span>Tema: </span>
-              <select [value]="new.topic" name="topic" (input)= "values.topic = $event.target.value" required>
+              <select [ngModel]="new.topic" name="topic" required>
                 <option value="esportes">Esportes</option>
                 <option value="politica">Política</option>
                 <option value="entretenimento">Entretenimento</option>
@@ -31,7 +31,7 @@
             </div>
             <div id="buttons">
               <button (click)="closeModal()">Sair</button>
-              <button type="submit" (click)= "save()">Salvar</button>
+              <button type="submit">Salvar</button>
             </div>
         </div>
     </form>

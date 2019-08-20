@@ -12,12 +12,6 @@ export class ModalComponent implements OnInit {
   @Input('modalTitle') modalTitle;
   @Output() modalClose = new EventEmitter();
 
-  values = { "topic":"",
-                      "title": "",
-                      "image": "",
-                      "link" : "",
-                      "description": "" } 
-
   constructor() {
   }
   
@@ -32,15 +26,19 @@ export class ModalComponent implements OnInit {
     event.stopPropagation();
   }
 
-  save(){     
+  save(form){
 
-      this.new.topic = this.values.topic || this.new.topic;
-      this.new.title = this.values.title || this.new.title;
-      this.new.image = this.values.image || this.new.image;
-      this.new.link = this.values.link || this.new.link;
-      this.new.description = this.values.description || this.new.description;
-    
-    this.modalClose.emit(this.new);
+    const { value } = form;
+
+    if(form.status == 'VALID'){ 
+
+        if(this.new._id) {
+          
+          value._id = this.new._id
+        }
+      
+       this.modalClose.emit(value);
+    }
   }
 
 }

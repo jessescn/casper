@@ -21,8 +21,6 @@ const NewSchema =  new Schema({
        type: String,
        required: true
    }
-},{
-    timestamps: true
 })
 
 module.exports = model('New', NewSchema);

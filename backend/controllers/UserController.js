@@ -1,14 +1,11 @@
-const User =  require('../models/user');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-require('dotenv-safe').load();
+
+const User =  require('../models/user');
+const authConfigs = require('../configs/config')
 
 module.exports = {
-    async index(req, res){
-        const users = await User.find();
-        res.json(users);
-    },
-
+    
     async signOn(req, res){
         const { password, name } = req.body;
 
@@ -55,7 +52,7 @@ module.exports = {
 }
 
 function generateToken(id){
-    return jwt.sign({ id }, process.env.SECRET, {
+    return jwt.sign({ id }, authConfigs.secret, {
         expiresIn: 86500 // expires in 5min
     });
 }

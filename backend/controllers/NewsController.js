@@ -2,6 +2,7 @@ const New = require('../models/new');
 
 module.exports = {
     async index(req, res) {
+
         const news = await New.find();
 
         if (news.length == 0) {
@@ -13,10 +14,6 @@ module.exports = {
     // retorna a lista de todas as noticias pelo topico recebido como parametro
     async getNewByTopic(topic) {
 
-        if (!topic) {
-            return [];
-        }
-
         return await New.find({ topic: topic }).limit(10);
     },
     // recebe os valores pelo corpo e cria a nova noticia
@@ -25,7 +22,6 @@ module.exports = {
         const news = await New.create(req.body);
 
         console.log("Noticia criada com sucesso!");
-
 
         return res.json(news);
     },
@@ -37,7 +33,6 @@ module.exports = {
         const newsUpdated = await New.findOneAndUpdate({ _id: id }, req.body);
 
         console.log("Noticia atualizada com sucesso!");
-
 
         return res.json(newsUpdated);
     },

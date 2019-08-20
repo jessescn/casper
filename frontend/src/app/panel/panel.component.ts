@@ -107,6 +107,7 @@ export class PanelComponent implements OnInit {
   }
 
   closeModal(values) {
+    
     if (values) {
       if (values._id) {
         this.newsService.updateNew(values).subscribe(() => {
