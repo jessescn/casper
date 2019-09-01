@@ -30,7 +30,7 @@ module.exports = {
 
         const { id } = req.params;
 
-        const newsUpdated = await New.findOneAndUpdate({ _id: id }, req.body);
+        const newsUpdated = await New.findOneAndUpdate({ _id: id }, req.body, { new: true });
 
         console.log("Noticia atualizada com sucesso!");
 
