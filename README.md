@@ -1,30 +1,29 @@
-# casper
+# Casper 🤖
 
-Casper é um chatbot para a plataforma messenger que lista para o usuário um total de, no máximo, 10 notícias sobre um determinado tema, tais noticias fornecidas por ele podem ser gerenciadas (cadastradas, editadas e removidas) a partir da plataforma web feita https://casperpanel.herokuapp.com/ (desenvolvida em Angular + nodejs).
-
-## Configurando o Sistema
+Casper is a Nodejs messenger chatbot that displays of at most 10 news of an specific topic. this news come from a control panel, where an admin can add, edit and remove news. This platform can be found [here](https://casperpanel.herokuapp.com/)       
+## Setting up the ground
 
 ### Backend
 
-O backend da aplicação é em nodejs. O gerenciamento de pacotes é feito usando yarn 
+The backend was made using [nodejs](https://nodejs.org/en/download/) and the dependencies management was made using [yarn](https://yarnpkg.com/lang/pt-br/docs/install/#debian-stable)
 
 ```bash
-# Instalando as dependências do backend 
+# Installing backend dependencies 
 $ cd backend && yarn install
 
-# Executando a api
+# Running the API
 $  yarn dev
 ```
 
 ### Frontend
 
-O Frontend foi feito em Angular. O gerenciamento de pacotes do frontend é feito usando npm
+Frontend was developed using the framework [Angular2+](https://cli.angular.io/) and the dependencies management was made using npm (installed with nodejs)
 
 ```bash
-# Instalando as dependências do frontend
+# Installing frontend dependencies
 $ cd frontend &&  npm install
 
-# Executando a aplicação
+# Running the control panel
 $ npm start
 ```
 
